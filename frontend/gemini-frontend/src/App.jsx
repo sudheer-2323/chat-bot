@@ -22,7 +22,7 @@ function App() {
     setChat(updatedChat);
 
     try {
-      const res = await fetch(`http://localhost:3000/ask?q=${encodeURIComponent(question)}`);
+      const res = await fetch(`https://chat-bot-backend-9hi4.onrender.com/ask?q=${encodeURIComponent(question)}`);
       const data = await res.json();
       setAnswer(data.answer || 'No response from AI.');
       setQuestion('');
