@@ -8,9 +8,9 @@ dotenv.config();
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-    async function main(prompt) {
-        try {
-        const result = await ai.models.generateContent({
+async function main(prompt) {
+    try {
+    const result = await ai.models.generateContent({
         model: "gemini-1.5-flash",
         contents: prompt,
         });
@@ -18,7 +18,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     } catch (error) {
         console.error("Error generating content:", error.message || error);
     }
-    }
+}
 
 // Middleware
 app.use(express.json());
